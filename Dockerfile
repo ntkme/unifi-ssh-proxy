@@ -1,4 +1,4 @@
-FROM docker.io/library/alpine:3.16.3
+FROM docker.io/library/alpine:3.17.0
 
 RUN apk add --no-cache openssh-client \
  && printf '%s\n' '#!/bin/sh' 'exec ssh -p "$(cat /etc/unifi-os/ssh_proxy_port)" -o StrictHostKeyChecking=no -q root@localhost -- "$@"' \
